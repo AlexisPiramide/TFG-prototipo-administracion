@@ -7,6 +7,12 @@ import Registro from "./components/Registro";
 import MisCosas from "./components/MisCosas";
 import CosaNueva from "./components/CosaNueva";
 
+const [usuario, setUsuario]=useState()
+const [error, setError]=useState()
+
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <MisCosas /> },
       { path: "nueva", element: <CosaNueva /> },
-      { path: "login", element: <Login /> },
+      { path: "login", element: <LogIn  setUsuario={setUsuario} error={error} setError={setError}/> },
       { path: "registro", element: <Registro /> },
     ],
   },

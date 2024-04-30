@@ -2,9 +2,12 @@ import { iniciarSesion } from "../services/services.usuarios.js";
 import { useState } from "react";
 import '../style/LogIn.css'
 import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
-    
+    const navigate = useNavigate();
+   
+
     const [usuario,setUsuario] = useOutletContext();
     const [error, setError] = useOutletContext();
 
@@ -20,6 +23,7 @@ export default function LogIn() {
                 const data = await iniciarSesion(alias, password);
                 if (data) {
                     setUsuario(data);
+                    navigate("/examenes");
                 } 
             } catch (error) {
                 setError(error);

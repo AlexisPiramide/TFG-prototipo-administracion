@@ -4,22 +4,32 @@ import Pregunta from './Pregunta'
 import { postRespuestas } from '../services/services.examenes'
 import { useOutletContext } from 'react-router-dom';
 
+import { useNavigate } from "react-router-dom";
+
+
 export default function Examen() {
+    const navigate = useNavigate();
+
     const [usuario] = useOutletContext();
-    const [,,,,,,examen] = useOutletContext();
+    const [, , , , , , examen] = useOutletContext();
+    const [,,,,, setExamenes] = useOutletContext();
 
     const [respuestas, setRespuestas] = useState([])
     const [validar, setValidar] = useState(false)
 
+
     const enviarRespuestas = async (e) => {
         e.preventDefault()
         const result = await postRespuestas(respuestas, examen.id, usuario)
-        setValidar(!validar)
+        if (result) {
+            navigate("/examenes");
+        }
+
     }
 
     return (
         <>
-            
+
             {examen != undefined ? examen.preguntas.map((pregunta, index) => (
                 <Pregunta pregunta={pregunta} validar={validar} respuestas={respuestas} setRespuestas={setRespuestas} numeroPregunta={index} key={index} />
             )) : ''}

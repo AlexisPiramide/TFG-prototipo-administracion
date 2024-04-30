@@ -18,10 +18,6 @@ function App() {
     recogeExamenes(usuario)
   }, [usuario])
 
-  useEffect(()=>{
-    console.log(examenes, 'examenes del set')
-  },[examenes])
-
   const recogeExamenes = async () => {
     const result = await getExamenes(usuario)
     console.log(result, 'examenes')

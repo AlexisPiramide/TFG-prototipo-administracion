@@ -1,7 +1,11 @@
 import { useOutletContext } from "react-router-dom";
 import { registrarUsuario } from "../services/services.usuarios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function Registro() {
+
+    const navigate = useNavigate();
+
 
     const [usuario,setUsuario] = useOutletContext();
     const [error, setError] = useOutletContext();
@@ -22,6 +26,7 @@ export default function Registro() {
             try {
                 const data = await registrarUsuario(nombre, apellidos, alias, email, password);
                 setUsuario(data);
+                navigate("/examenes");
             } catch (error) {
                 setError(error);
             }

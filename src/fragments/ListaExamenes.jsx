@@ -1,5 +1,11 @@
+import { useOutletContext } from "react-router-dom";
+
 import ExamenBoton from "./ExamenBoton"
-export default function ListaExamenes({ usuario, examenes, setExamen }) {
+export default function ListaExamenes() {
+
+    const [usuario,setUsuario] = useOutletContext();
+    const [,,,,examenes] = useOutletContext();
+    const [,,,,,,, setExamen] = useOutletContext();
 
     return (
         <>

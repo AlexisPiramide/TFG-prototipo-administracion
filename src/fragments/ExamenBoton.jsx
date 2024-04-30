@@ -1,12 +1,16 @@
 import '../style/ExamenBoton.css';
 import { getExamen } from '../services/services.examenes';
+import { useNavigate } from "react-router-dom";
 
 export default function ExamenBoton({ examenDibujar, setExamen, usuario }) {
+    const navigate = useNavigate();
 
     const abrirExamen = async (e) => {
         e.preventDefault();
         const examenFetch = await getExamen(e.target.id,usuario);
         setExamen(examenFetch)
+        console.log(examenFetch, 'examen del fetch')
+        navigate("/examen");
     }
 
     return (

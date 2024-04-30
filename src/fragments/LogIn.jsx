@@ -1,9 +1,13 @@
 import { iniciarSesion } from "../services/services.usuarios.js";
 import { useState } from "react";
 import '../style/LogIn.css'
+import { useOutletContext } from "react-router-dom";
 
-export default function LogIn({setUsuario, error, setError}) {
+export default function LogIn() {
     
+    const [usuario,setUsuario] = useOutletContext();
+    const [error, setError] = useOutletContext();
+
     const [alias, setAlias] = useState("");
     const [password, setPassword] = useState("");
     

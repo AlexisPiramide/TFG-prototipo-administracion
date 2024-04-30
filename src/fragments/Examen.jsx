@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Pregunta from './Pregunta'
 
 import { postRespuestas } from '../services/services.examenes'
+import { useOutletContext } from 'react-router-dom';
 
-export default function Examen({ examen, usuario }) {
+export default function Examen() {
+    const [usuario] = useOutletContext();
+    const [,,,,,,examen] = useOutletContext();
+
     const [respuestas, setRespuestas] = useState([])
     const [validar, setValidar] = useState(false)
 
@@ -15,6 +19,7 @@ export default function Examen({ examen, usuario }) {
 
     return (
         <>
+            
             {examen != undefined ? examen.preguntas.map((pregunta, index) => (
                 <Pregunta pregunta={pregunta} validar={validar} respuestas={respuestas} setRespuestas={setRespuestas} numeroPregunta={index} key={index} />
             )) : ''}

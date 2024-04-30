@@ -1,6 +1,11 @@
+import { useOutletContext } from "react-router-dom";
 import { registrarUsuario } from "../services/services.usuarios";
+import { useState } from "react";
+export default function Registro() {
 
-export default function Registro({ setUsuario, error, setError }) {
+    const [usuario,setUsuario] = useOutletContext();
+    const [error, setError] = useOutletContext();
+
 
     const [alias, setAlias] = useState("");
     const [password, setPassword] = useState("");
@@ -13,13 +18,19 @@ export default function Registro({ setUsuario, error, setError }) {
 
     const validar = async (e) => {
         e.preventDefault();
-        if (alias != '' && password != '' && email != '' && nombre != '' && apellidos != '' && password.test(passwordPattern) && email.test(emailPattern)) {
+        if (alias != '' && password != '' && email != '' && nombre != '' && apellidos != '' && passwordPattern.test(password) && emailPattern.test(email)) {
             try {
                 const data = await registrarUsuario(nombre, apellidos, alias, email, password);
                 setUsuario(data);
             } catch (error) {
                 setError(error);
             }
+        }if(!passwordPattern.test(password)){
+            setError(new Error('Tu contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número. Tu email debe ser válido.'));
+            console.log(password)
+        }if(!emailPattern.test(email)){
+            
+            setError(new Error('Tu email debe ser válido.'));
         }
     }
 

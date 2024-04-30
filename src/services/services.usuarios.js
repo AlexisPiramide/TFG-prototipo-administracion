@@ -9,7 +9,9 @@ const iniciarSesion = async (alias,password) => {
         body: JSON.stringify({alias:alias,password:password})
     })
     if(data.ok){
+      
         const json = await data.json();
+        console.log(json)
         return json;
     }else{
         throw new Error('Usuario o contraseña incorrectos');
@@ -33,5 +35,5 @@ const registrarUsuario = async (nombre,apellidos,alias,email,password) => {
     }
 
 }
-  
+
 export { iniciarSesion, registrarUsuario };

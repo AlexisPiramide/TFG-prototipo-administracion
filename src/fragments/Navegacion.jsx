@@ -2,8 +2,6 @@ import { useNavigate } from "react-router-dom";
 import '../style/Navegacion.css'
 export default function Nav({usuario}) {
     const navigate = useNavigate();
-
-    console.log('Usuario:', usuario)
     
     return ( 
         <nav>

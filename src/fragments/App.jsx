@@ -1,16 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 //import './App.css'
-import Pregunta from './Pregunta'
-import ExamenBoton from './ExamenBoton'
-import { getExamenes, getExamen } from './services/services.examenes'
-import LogIn from './LogIn'
-import Examen from './Examen'
+import { MainContext } from '../main'
+import { getExamenes, getExamen } from '../services/services.examenes'
+import Navegacion from './Navegacion'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
-  const [examenes, setExamenes] = useState([])
-  const [examen, setExamen] = useState()
-  
+  const context = useContext(MainContext);
+  const [usuario, setUsuario] = useState(context.usuario)
+
   useEffect(() => {
     recogeExamenes(usuario)
   }, [usuario])
@@ -23,11 +22,9 @@ function App() {
 
   return (
     <>
-      <h1>{usuario ? usuario.token : '' }</h1>
-      {usuario ?  <ListaExamenes usuario={usuario} examenes={examenes} setExamen={setExamen} /> : (error ? <LogIn setError={setError} error={error} setUsuario={setUsuario}/> : <LogIn setError={setError} setUsuario={setUsuario}/>)}
-       <Examen examen={examen}/>
+      <Navegacion usuario={usuario} />
+      <Outlet />
     </>
-   
   )
 }
 

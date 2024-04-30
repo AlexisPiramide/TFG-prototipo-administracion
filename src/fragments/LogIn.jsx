@@ -1,9 +1,10 @@
 import { iniciarSesion } from "../services/services.usuarios.js";
 import { useState } from "react";
 import '../style/LogIn.css'
-
+import { MainContext } from "../main.jsx";
 export default function LogIn({setUsuario, error, setError}) {
-    
+
+
     const [alias, setAlias] = useState("");
     const [password, setPassword] = useState("");
     

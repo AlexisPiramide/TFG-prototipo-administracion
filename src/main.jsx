@@ -1,27 +1,18 @@
-import React from "react";
+import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./components/App";
-import Login from "./components/Login";
-import Registro from "./components/Registro";
-import MisCosas from "./components/MisCosas";
-import CosaNueva from "./components/CosaNueva";
+import App from "./fragments/App";
+import LogIn from "./fragments/LogIn";
+import ListaExamenes from "./fragments/ListaExamenes";
 
-const [usuario, setUsuario]=useState()
-const [error, setError]=useState()
-
-
-
-
+const MainContext = createContext();
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "", element: <MisCosas /> },
-      { path: "nueva", element: <CosaNueva /> },
-      { path: "login", element: <LogIn  setUsuario={setUsuario} error={error} setError={setError}/> },
-      { path: "registro", element: <Registro /> },
+      { path: "login", element: <LogIn /> },
+      { path: "examenes", element: <ListaExamenes /> },
     ],
   },
   {
@@ -34,8 +25,21 @@ const router = createBrowserRouter([
   },
 ]);
 
+
+let usuario;
+const setUsuario = () => {}; // Define the variable setUsuario
+const error = ""; // Define the variable error
+const setError = () => {}; // Define the variable setError
+const examenes = []; // Define the variable examenes
+const setExamenes = () => {}; // Define the variable setExamenes
+const examen = ""; // Define the variable examen
+const setExamen = () => {}; // Define the variable setExamen
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MainContext.Provider value={{ usuario, setUsuario, error, setError, examenes, setExamenes, examen, setExamen }}>
+      <RouterProvider router={router} />
+    </MainContext.Provider>
   </React.StrictMode>
 );
+export { MainContext };

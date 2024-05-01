@@ -35,6 +35,18 @@ const postRespuestas = async (respuestas,id,token) => {
     return json;
 }
 
+const nuevoExamen = async(token) => {
+    const data = await fetch(URL+"/api/examenes/nuevoExamen", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.token}`
+        }
+    });
+    const json = await data.json();
+    return json;
+}
+
 
   
-export { getExamenes, getExamen, postRespuestas};
+export { getExamenes, getExamen, postRespuestas, nuevoExamen};

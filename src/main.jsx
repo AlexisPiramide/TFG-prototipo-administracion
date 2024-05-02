@@ -6,6 +6,7 @@ import LogIn from "./fragments/LogIn";
 import Registro from "./fragments/Registro";
 import ListaExamenes from "./fragments/ListaExamenes";
 import Examen from "./fragments/Examen";
+import RespuestasExamen from "./fragments/RespuestasExamen";
 
 const MainContext = createContext();
 const router = createBrowserRouter([
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
       { path: "login", element: <LogIn /> },
       { path: "registro", element: <Registro />},
       { path: "examenes", element: <ListaExamenes /> },
-      { path: "examen", element: <Examen />}
+      { path: "examen", element: <Examen />},
+      { path: "respuestas", element: <RespuestasExamen />}
     ],
   },
   {

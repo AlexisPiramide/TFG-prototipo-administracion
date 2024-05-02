@@ -14,6 +14,9 @@ export default function Examen() {
     const [, , , , , , examen] = useOutletContext();
     const [,,,,, setExamenes] = useOutletContext();
 
+    const [,,,,,, recarga] = useOutletContext();
+    const [,,,,,,, setRecarga] = useOutletContext();
+
     const [respuestas, setRespuestas] = useState([])
     const [validar, setValidar] = useState(false)
 
@@ -22,6 +25,7 @@ export default function Examen() {
         e.preventDefault()
         const result = await postRespuestas(respuestas, examen.id, usuario)
         if (result) {
+            setRecarga(!recarga);
             navigate("/examenes");
         }
 

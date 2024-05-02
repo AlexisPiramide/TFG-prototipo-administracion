@@ -21,6 +21,17 @@ const getExamen = async (id, token) => {
     return json;
 }
 
+const getRespuestas = async (id, token) => {
+    const data = await fetch(URL+"/api/examenes/respuestas/"+id, {
+        headers: {
+            Authorization: `Bearer ${token.token}`
+        }
+    });
+  
+    const json = await data.json();
+    return json;
+}
+
 const postRespuestas = async (respuestas,id,token) => {
     console.log(respuestas, 'respuestas')
     const data = await fetch(URL+"/api/examenes/respuestas/"+id, {
@@ -37,4 +48,4 @@ const postRespuestas = async (respuestas,id,token) => {
 
 
   
-export { getExamenes, getExamen, postRespuestas};
+export { getExamenes, getExamen, postRespuestas,getRespuestas};

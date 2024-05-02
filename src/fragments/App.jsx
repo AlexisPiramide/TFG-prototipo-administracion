@@ -8,19 +8,20 @@ import { Outlet } from 'react-router-dom'
 function App() {
 
   const [usuario, setUsuario] = useState(null);
-  const [error, setError]=useState(null)
+  const [error, setError] = useState(null)
+  const [recarga, setRecarga] = useState(false)
 
   const [examenes, setExamenes] = useState([])
   const [examen, setExamen] = useState(null)
 
   useEffect(() => {
-    console.log(usuario, 'usuario')
-    recogeExamenes(usuario)
-  }, [usuario])
+    if (usuario) {
+      recogeExamenes(usuario)
+    }
+  }, [usuario, recarga])
 
   const recogeExamenes = async () => {
     const result = await getExamenes(usuario)
-    console.log(result, 'examenes')
     setExamenes(result)
   }
 
@@ -28,7 +29,7 @@ function App() {
   return (
     <>
       <Navegacion usuario={usuario} />
-      <Outlet context={[usuario,setUsuario,error,setError,examenes,setExamenes,examen,setExamen]}/>
+      <Outlet context={[usuario, setUsuario, error, setError, examenes, setExamenes, examen, setExamen, recarga, setRecarga]} />
     </>
   )
 }

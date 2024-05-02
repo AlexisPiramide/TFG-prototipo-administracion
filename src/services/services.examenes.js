@@ -60,8 +60,4 @@ const nuevoExamen = async(token) => {
 
 
   
-<<<<<<< HEAD
-export { getExamenes, getExamen, postRespuestas,getRespuestas};
-=======
-export { getExamenes, getExamen, postRespuestas, nuevoExamen};
->>>>>>> refs/remotes/origin/master
+export { getExamenes, getExamen, postRespuestas,getRespuestas, nuevoExamen};

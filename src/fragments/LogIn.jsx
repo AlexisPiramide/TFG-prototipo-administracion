@@ -9,7 +9,7 @@ export default function LogIn() {
    
 
     const [usuario,setUsuario] = useOutletContext();
-    const [error, setError] = useOutletContext();
+    const [error, setError] = useState();
 
     const [alias, setAlias] = useState("");
     const [password, setPassword] = useState("");

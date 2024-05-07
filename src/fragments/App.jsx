@@ -8,7 +8,6 @@ import { Outlet } from 'react-router-dom'
 function App() {
 
   const [usuario, setUsuario] = useState(null);
-  const [error, setError] = useState(null)
   const [recarga, setRecarga] = useState(false)
 
   const [examenes, setExamenes] = useState([])
@@ -28,8 +27,8 @@ function App() {
 
   return (
     <>
-      <Navegacion usuario={usuario} />
-      <Outlet context={[usuario, setUsuario, error, setError, examenes, setExamenes, examen, setExamen, recarga, setRecarga]} />
+      <Navegacion usuario={usuario} recarga={recarga} setRecarga={setRecarga} />
+      <Outlet context={[usuario, setUsuario, examenes, setExamenes, examen, setExamen, recarga, setRecarga]} />
     </>
   )
 }

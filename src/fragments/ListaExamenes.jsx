@@ -4,8 +4,10 @@ import ExamenBoton from "./ExamenBoton"
 export default function ListaExamenes() {
 
     const [usuario,setUsuario] = useOutletContext();
-    const [,,,,examenes] = useOutletContext();
-    const [,,,,,,, setExamen] = useOutletContext();
+    const [,,examenes] = useOutletContext();
+    const [,,,,, setExamen] = useOutletContext();
+    const [,,,,, , setRecarga] = useOutletContext();
+    
 
     return (
         <>

@@ -11,11 +11,11 @@ export default function Examen() {
     const navigate = useNavigate();
 
     const [usuario] = useOutletContext();
-    const [, , , , , , examen] = useOutletContext();
-    const [,,,,, setExamenes] = useOutletContext();
+    const [, , , ,  examen] = useOutletContext();
+    const [,,, setExamenes] = useOutletContext();
 
-    const [,,,,,, recarga] = useOutletContext();
-    const [,,,,,,, setRecarga] = useOutletContext();
+    const [,,,, recarga] = useOutletContext();
+    const [,,,,, setRecarga] = useOutletContext();
 
     const [respuestas, setRespuestas] = useState([])
     const [validar, setValidar] = useState(false)

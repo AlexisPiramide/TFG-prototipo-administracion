@@ -5,8 +5,8 @@ import PreguntaRespuestaExamen from "./PreguntaRespuestaExamen";
 export default function RespuestasExamen() {
 
     const [usuario] = useOutletContext();
-    const [, , , , , , examen] = useOutletContext();
-    const [,,,,, setExamenes] = useOutletContext();
+    const [, , , , examen] = useOutletContext();
+    const [,,, setExamenes] = useOutletContext();
     
     const Examen = examen.examen;
     const Respuestas = examen.respuestas.respuestas;

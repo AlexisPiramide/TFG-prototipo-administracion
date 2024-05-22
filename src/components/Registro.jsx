@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { registro } from "../services/usuarios.service";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function Registro() {
   const [alias, setAlias] = useState("");

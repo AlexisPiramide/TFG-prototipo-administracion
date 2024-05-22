@@ -22,11 +22,7 @@ export default function Nav() {
         <div>
           <input onChange={(e)=> (setBusqueda(e.target.value))} type="text" placeholder="Search" />
         </div>
-        <div>
-          <Link to="/login">Login</Link>
-          /  
-          <Link to="/registro">Registro</Link>
-        </div>
+        <Link to="/login">Login</Link>
 
         {lugares.length > 0 ? 
         <div>

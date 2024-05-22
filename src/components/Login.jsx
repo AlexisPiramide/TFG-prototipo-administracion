@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { login } from "../services/usuarios.service";
-import { useOutletContext } from "react-router-dom";
-
+import { useNavigate, useOutletContext } from "react-router-dom";
+import '../style/Login.css';
 export default function Login() {
   const [alias, setAlias] = useState("");
   const [password, setPassword] = useState("");
@@ -22,9 +22,9 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div id='login-div'>
       <h1>Login</h1>
-      <form onSubmit={doLogin}>
+      <form id='login' onSubmit={doLogin}>
         <input name="alias" type="text" placeholder="Alias" value={alias} onChange={(e) => { setAlias(e.target.value); }} />
         <input name="password" type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value); }} />
         <button type="submit">Entrar</button>

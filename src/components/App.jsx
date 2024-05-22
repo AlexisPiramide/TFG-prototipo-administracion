@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <Nav />
-      <Outlet />
+      <Outlet context={[usuario, setUsuario]}/>
     </>
   );
 }

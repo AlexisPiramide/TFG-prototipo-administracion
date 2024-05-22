@@ -18,7 +18,7 @@ export default function Login() {
       setUsuario(result);
       navigate("/");
     }
-    
+
   };
 
   return (

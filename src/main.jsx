@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
+import AñadirLugar from "./components/AñadirLugar";
+import AñadirDatos from "./components/AñadirDatos";
+import ModificarDatos from "./components/ModificarDatos";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,11 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <h1>hola admin</h1>,
+    children: [
+      { path: "lugar", element: <AñadirLugar /> },
+      { path: "datos", element: <AñadirDatos /> },
+      { path: "modificar", element: <ModificarDatos />}
+    ],
   },
   {
     path: "*",

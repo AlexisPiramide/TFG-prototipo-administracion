@@ -4,16 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
-import MisCosas from "./components/MisCosas";
-import CosaNueva from "./components/CosaNueva";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "", element: <MisCosas /> },
-      { path: "nueva", element: <CosaNueva /> },
       { path: "login", element: <Login /> },
       { path: "registro", element: <Registro /> },
     ],

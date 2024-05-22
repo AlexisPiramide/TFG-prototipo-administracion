@@ -1,7 +1,6 @@
 import '../style/TablaDatos.css';
 
 export default function TablaDatos({ datos }) {
-  console.log(datos.dia);
   return (
     <table>
       <tr>
@@ -15,17 +14,19 @@ export default function TablaDatos({ datos }) {
         <th>Municipio</th>
         <th>Localidad</th>
       </tr>
-      <tr>
-        <td>{datos.dia}</td>
-        <td>{datos.temperaturaMaxima}</td>
-        <td>{datos.temperaturaMinima}</td>
-        <td>{datos.humedadMedia}</td>
-        <td>{datos.vientoMaxima}</td>
-        <td>{datos.vientoMinima}</td>
-        <td>{datos.probabilidadPrecipitacion}</td>
-        <td>{datos.municipio}</td>
-        <td>{datos.localidad}</td>
-      </tr>
+      {datos.map((dato) => (
+        <tr key={dato.dia}>
+          <td>{dato.dia}</td>
+          <td>{dato.temperaturaMaxima}</td>
+          <td>{dato.temperaturaMinima}</td>
+          <td>{dato.humedadMedia}</td>
+          <td>{dato.vientoMaxima}</td>
+          <td>{dato.vientoMinima}</td>
+          <td>{dato.probabilidadPrecipitacion}</td>
+          <td>{dato.municipio}</td>
+          <td>{dato.localidad}</td>
+        </tr>
+      ))}
     </table>
   );
 }

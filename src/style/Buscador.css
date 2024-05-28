@@ -1,0 +1,41 @@
+.lugares-seleccion {
+    margin-bottom: 20px;
+}
+
+.lugares-seleccion input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.lugares-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px; /* Optional: Adds some space between the input and the list */
+}
+
+.lugar-item {
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.lugar-item:hover {
+    background-color: rgba(231, 38, 38, 0.51);
+}
+
+.lugar-item button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}

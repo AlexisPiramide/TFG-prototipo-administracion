@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
 import Login from "./components/Login";
-import Registro from "./components/Registro";
+import Menu from "./components/Menu";
 import AñadirLugar from "./components/AñadirLugar";
 import AñadirDatos from "./components/AñadirDatos";
 import ModificarDatos from "./components/ModificarDatos";
@@ -13,7 +13,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "login", element: <Login /> }
+      { path: "login", element: <Login /> },
+      { path: "menu", element: <Menu /> }
     ],
   },
   {

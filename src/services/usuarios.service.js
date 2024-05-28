@@ -1,6 +1,8 @@
+import URL from "./constante.js";
+
 const login = async (email, password) => {
   try {
-    const data = await fetch("http://localhost:8080/api/usuarios/login", {
+    const data = await fetch(URL + "/api/usuario/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +20,7 @@ const login = async (email, password) => {
 
 const registro = async (alias,email, password,nombre,apellidos) => {
   try {
-    const data = await fetch("http://localhost:8080/api/usuarios/registro", {
+    const data = await fetch(URL + "/api/usuario/registro", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

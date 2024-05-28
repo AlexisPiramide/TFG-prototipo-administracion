@@ -18,14 +18,14 @@ const login = async (email, password) => {
   }
 };
 
-const registro = async (alias,email, password,nombre,apellidos) => {
+const registro = async (alias, email, password, nombre, apellidos) => {
   try {
     const data = await fetch(URL + "/api/usuario/registro", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ alias,email, password,nombre,apellidos }),
+      body: JSON.stringify({ alias, email, password, nombre, apellidos }),
     });
     const json = await data.json();
     localStorage.setItem("token", json.token);
@@ -37,4 +37,24 @@ const registro = async (alias,email, password,nombre,apellidos) => {
   }
 }
 
-export { login, registro};
+
+const compruebaToken = async () => {
+  const token = localStorage.getItem("token");
+  try {
+    const data = await fetch(URL + "/api/usuario/compruebaToken", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const json = await data.json();
+    return json;
+  }
+  catch (error) {
+    console.error("Error occurred during token verification:", error);
+  }
+}
+
+
+export { login, registro, compruebaToken };

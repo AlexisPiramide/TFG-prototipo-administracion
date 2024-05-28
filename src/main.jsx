@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import AñadirLugar from "./components/AñadirLugar";
 import AñadirDatos from "./components/AñadirDatos";
 import ModificarDatos from "./components/ModificarDatos";
+import IsAdmin from "./components/IsAdmin";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <App />,
+    element: <App/>,
     children: [
+      { path: "/", element: <Menu />},
       { path: "lugar", element: <AñadirLugar /> },
       { path: "datos", element: <AñadirDatos /> },
       { path: "modificar", element: <ModificarDatos />}

@@ -5,11 +5,11 @@ import { useState } from "react";
 
 export default function App() {
 
-  const [usuario,setUsuario] = useState(null);
+  const [usuario,setUsuario] = useState('');
 
   return (
     <>
-      <Nav />
+      <Nav usuario={usuario} setUsuario={setUsuario}/>
       <Outlet context={[usuario, setUsuario]}/>
     </>
   );

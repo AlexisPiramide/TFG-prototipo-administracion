@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function AñadirLugar() {
 
     const [codigo_postal, setCodigo_postal] = useState(null)

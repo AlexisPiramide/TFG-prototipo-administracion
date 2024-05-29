@@ -1,0 +1,43 @@
+.añadir-lugar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.añadir-lugar h1{
+    align-self: center;
+}
+
+.añadir-lugar form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.label {
+    align-self: center;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input {
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    width: 200px;
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

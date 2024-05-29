@@ -1,8 +1,6 @@
 import '../style/TablaDatos.css';
 
 export default function TablaDatos({ datos }) {
-
-  //AÑADIR BOTON PARA EDITAR EN MODO ARMINISTRADOR
   return (
     <table>
       <tbody>

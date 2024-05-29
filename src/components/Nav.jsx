@@ -8,7 +8,7 @@ export default function Nav({ usuario, setUsuario}) {
       (usuario) ?
         <nav>
           <div>
-            <Link to="/menu">Menu</Link>
+            <Link to="/admin/">Menu</Link>
             <Link to="/admin/lugar">Añadir Lugar</Link>
             <Link to="/admin/datos">Añadir Datos</Link>
             <Link to="/admin/modificar">Modificar Datos</Link>

@@ -40,19 +40,11 @@ const registro = async (alias, email, password, nombre, apellidos) => {
 
 const compruebaToken = async () => {
   const token = localStorage.getItem("token");
-  try {
-    const data = await fetch(URL + "/api/usuario/compruebaToken", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const json = await data.json();
-    return json;
-  }
-  catch (error) {
-    console.error("Error occurred during token verification:", error);
+
+  if (!token) {
+    return false;
+  } else {
+    return true
   }
 }
 

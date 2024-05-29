@@ -9,9 +9,6 @@ export default function Nav({ usuario, setUsuario}) {
         <nav>
           <div>
             <Link to="/admin/">Menu</Link>
-            <Link to="/admin/lugar">Añadir Lugar</Link>
-            <Link to="/admin/datos">Añadir Datos</Link>
-            <Link to="/admin/modificar">Modificar Datos</Link>
             <Link to="/login" onClick={() => setUsuario(null)}>Logout</Link>
           </div>
         </nav>

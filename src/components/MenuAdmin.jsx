@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Buscador from "./Buscador";
-import "../style/Menu.css";
+import "../style/MenuAdmin.css";
 
 import AñadirLugar from "./AñadirLugar";
 import AñadirDatos from "./AñadirDatos";
@@ -21,18 +21,18 @@ export default function MenuAdmin() {
 
     const limpiarLocalizacion = () => {
         setLocalizacion({ municipio: "", localidad: "" });
-        setModificar(false); // Resetear el estado de modificar
+        setModificar(false);
     };
 
     return (
         <div className="menu">
-            <h1>Menu Admin</h1>
+            <h1>Zona Admin</h1>
             <button className="ocultar" onClick={ocultar}>{visible ? "Ocultar Buscador" : "Mostrar Buscador"}</button>
             {visible && <Buscador setLocalizacion={setLocalizacion} />}
-            <button onClick={limpiarLocalizacion}>Limpiar Localizacion</button>
+            {localizacion.municipio ? <button className="button-admin" onClick={limpiarLocalizacion}>Limpiar Localizacion</button> : ''}
             {localizacion.municipio && (
                 <>
-                    <button onClick={() => setModificar(!modificar)}>
+                    <button className="button-admin" onClick={() => setModificar(!modificar)}>
                         {modificar ? "Cambiar a Añadir Datos" : "Cambiar a Modificar Datos"}
                     </button>
                     {modificar ? (
@@ -42,12 +42,7 @@ export default function MenuAdmin() {
                     )}
                 </>
             )}
-            {!localizacion.municipio && (
-                <div>
-                    <h2>Añadir Lugar</h2>
-                    <AñadirLugar />
-                </div>
-            )}
+            {(!localizacion.municipio) ?  <AñadirLugar /> : ''}
         </div>
     );
 }

@@ -3,7 +3,7 @@ import '../style/TablaAdmin.css'
 export default function TablaAdmin({ datos, setActual }) {
 
     return (
-        <ul className="lugares-list">
+        <ul className="lugares-list-admin">
         {datos.map((dato) => {
             return (
                 <li key={dato.dia} className="item">

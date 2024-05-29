@@ -3,7 +3,11 @@
    flex-direction: column;
 }
 
-button.ocultar{
+.menu h1{
+    align-self: center;
+}
+
+button.button-admin{
     padding: 5px;
     margin: 5px;
     color: inherit;

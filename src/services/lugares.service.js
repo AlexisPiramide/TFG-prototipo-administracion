@@ -22,7 +22,8 @@ const añadirLugar = async (lugar) => {
         const data = await fetch(URL + "/api/lugares/", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "Bearer "+localStorage.getItem("token"),
             },
             body: JSON.stringify({'municipio':municipio, 'localidad':localidad, 'codigo_postal':codigo_postal})
         });

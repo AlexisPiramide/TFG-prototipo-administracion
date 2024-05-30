@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function App() {
 
-  const [usuario,setUsuario] = useState('Pepe');
+  const [usuario,setUsuario] = useState('');
 
   return (
     <>

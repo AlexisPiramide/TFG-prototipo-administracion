@@ -11,7 +11,7 @@ const login = async (email, password) => {
     });
     const json = await data.json();
     localStorage.setItem("token", json.token);
-    localStorage.setItem("alias", json.alias);
+    localStorage.setItem("email", email);
     return json;
   } catch (error) {
     alert("Usuario o contraseña incorrectos")

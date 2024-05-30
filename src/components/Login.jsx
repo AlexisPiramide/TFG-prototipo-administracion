@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { login } from "../services/usuarios.service";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import '../style/Login.css';
+
+import { Navigate } from "react-router-dom";
 export default function Login() {
   const [alias, setAlias] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const navigate = useNavigate();
-  const [usuario,setUsuario] = useOutletContext();
+  const [usuario, setUsuario] = useOutletContext();
+
+
+  const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
+
+  const IsAdmin = () => {
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+    if (token && email) {
+      setUsuario({ token, email });
+      navigate("/admin");
+    }
+  };
+
+  useEffect(() => {
+    IsAdmin();
+  }, []);
 
   const doLogin = (e) => {
     e.preventDefault();
@@ -16,7 +35,7 @@ export default function Login() {
 
     if (result) {
       setUsuario(result);
-      navigate("/");
+      navigate("/admin");
     }
 
   };

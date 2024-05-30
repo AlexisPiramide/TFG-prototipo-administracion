@@ -4,11 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
 import Login from "./components/Login";
 import Menu from "./components/Menu";
-import AñadirLugar from "./components/AñadirLugar";
-import AñadirDatos from "./components/AñadirDatos";
-import ModificarDatos from "./components/ModificarDatos";
+
 import MenuAdmin from "./components/MenuAdmin";
-import IsAdmin from "./components/IsAdmin";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "login", element: <Login /> },
-      { path: "menu", element: <Menu /> }
+      { path: "", element: <Menu /> }
     ],
   },
   {

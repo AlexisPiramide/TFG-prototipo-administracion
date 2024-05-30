@@ -1,15 +1,33 @@
 import { useEffect, useState } from "react";
 import Buscador from "./Buscador";
 import "../style/MenuAdmin.css";
-
+import { Navigate, useOutletContext } from "react-router-dom";
 import AñadirLugar from "./AñadirLugar";
 import AñadirDatos from "./AñadirDatos";
 import ModificarDatos from "./ModificarDatos";
 
 export default function MenuAdmin() {
+    const [usuario, setUsuario] = useOutletContext();
     const [localizacion, setLocalizacion] = useState({ municipio: "", localidad: "" });
     const [visible, setVisible] = useState(true);
     const [modificar, setModificar] = useState(false);
+
+    const IsAdmin = () => {
+        if (!usuario) {
+            const token = localStorage.getItem("token");
+            const email = localStorage.getItem("email");
+            if (token && email) {
+                setUsuario({ token, email });
+            } else {
+                navigate("/login");
+            }
+        }
+    };
+
+    useEffect(() => {
+        IsAdmin();
+    }, []);
+
 
     const ocultar = () => {
         setVisible(!visible);
@@ -27,7 +45,7 @@ export default function MenuAdmin() {
             {visible && <Buscador setLocalizacion={setLocalizacion} />}
             {localizacion.municipio ? <button className="button-admin" onClick={limpiarLocalizacion}>Limpiar Localizacion</button> : ''}
 
-            
+
             {localizacion.municipio && (
                 <>
                     <button className="button-admin" onClick={() => setModificar(!modificar)}>
@@ -46,7 +64,7 @@ export default function MenuAdmin() {
                     )}
                 </>
             )}
-            {(!localizacion.municipio) ?  <AñadirLugar /> : ''}
+            {(!localizacion.municipio) ? <AñadirLugar /> : ''}
         </div>
     );
 }

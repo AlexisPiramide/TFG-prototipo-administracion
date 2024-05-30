@@ -15,10 +15,6 @@ export default function MenuAdmin() {
         setVisible(!visible);
     };
 
-    useEffect(() => {
-        console.log(localizacion)
-    }, [localizacion]);
-
     const limpiarLocalizacion = () => {
         setLocalizacion({ municipio: "", localidad: "" });
         setModificar(false);
@@ -30,15 +26,23 @@ export default function MenuAdmin() {
             <button className="ocultar" onClick={ocultar}>{visible ? "Ocultar Buscador" : "Mostrar Buscador"}</button>
             {visible && <Buscador setLocalizacion={setLocalizacion} />}
             {localizacion.municipio ? <button className="button-admin" onClick={limpiarLocalizacion}>Limpiar Localizacion</button> : ''}
+
+            
             {localizacion.municipio && (
                 <>
                     <button className="button-admin" onClick={() => setModificar(!modificar)}>
-                        {modificar ? "Cambiar a Añadir Datos" : "Cambiar a Modificar Datos"}
+                        {!modificar ? "Cambiar a Añadir Datos" : "Cambiar a Modificar Datos"}
                     </button>
                     {modificar ? (
-                        <AñadirDatos municipio={localizacion.municipio} localidad={localizacion.localidad} />
+                        <div>
+                            <h3 style={{ textAlign: "center" }}>Actulamente usted esta añadiendo datos al lugar: {localizacion.municipio}, {localizacion.localidad}</h3>
+                            <AñadirDatos municipio={localizacion.municipio} localidad={localizacion.localidad} />
+                        </div>
                     ) : (
-                        <ModificarDatos localizacion={localizacion} />
+                        <div>
+                            <h3 style={{ textAlign: "center" }}>Actulamente usted esta modificando el lugar: {localizacion.municipio}, {localizacion.localidad}</h3>
+                            <ModificarDatos localizacion={localizacion} />
+                        </div>
                     )}
                 </>
             )}

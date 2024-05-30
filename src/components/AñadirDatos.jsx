@@ -39,7 +39,7 @@ export default function AñadirDatos({municipio,localidad}) {
 
     return (
         <div className="añadir-datos">
-            <h1>Añadir Lugar</h1>
+            <h1>Añadir Datos</h1>
             <form onSubmit={(e)=>{enviarFormulario(e)}}>
                 <label className="label">Dia</label>
                 <input className="input" type="date" name="dia" onChange={(e)=>(setDia(e.target.value))}/>

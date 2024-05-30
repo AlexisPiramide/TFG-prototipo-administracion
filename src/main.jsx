@@ -23,10 +23,7 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <App />,
     children: [
-      { path: "", element: <MenuAdmin />},
-      { path: "lugar", element: <AñadirLugar /> },
-      { path: "datos", element: <AñadirDatos /> },
-      { path: "modificar", element: <ModificarDatos />}
+      { path: "", element: <MenuAdmin />}
     ],
   },
   {

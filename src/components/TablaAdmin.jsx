@@ -7,7 +7,8 @@ export default function TablaAdmin({ datos, setActual }) {
         {datos.map((dato) => {
             return (
                 <li key={dato.dia} className="item">
-                    <button>{new Date(dato.dia).toLocaleDateString()}</button>
+                    
+                    <button onClick={()=> setActual(dato)}>{new Date(dato.dia).toLocaleDateString()}</button>
                 </li>
             )
         })}

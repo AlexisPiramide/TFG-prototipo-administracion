@@ -11,10 +11,6 @@ export default function Login() {
   const navigate = useNavigate();
   const [usuario, setUsuario] = useOutletContext();
 
-
-  const token = localStorage.getItem("token");
-  const email = localStorage.getItem("email");
-
   const IsAdmin = () => {
     const token = localStorage.getItem("token");
     const email = localStorage.getItem("email");

@@ -1,18 +1,34 @@
 import { useEffect, useState } from "react";
 import Buscador from "./Buscador";
 import "../style/MenuAdmin.css";
-import { Navigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import AñadirLugar from "./AñadirLugar";
 import AñadirDatos from "./AñadirDatos";
 import ModificarDatos from "./ModificarDatos";
 
 export default function MenuAdmin() {
+    const navigate = useNavigate();
+
     const [usuario, setUsuario] = useOutletContext();
     const [localizacion, setLocalizacion] = useState({ municipio: "", localidad: "" });
     const [visible, setVisible] = useState(true);
     const [modificar, setModificar] = useState(false);
 
+    /*
     const IsAdmin = () => {
+        if (!usuario) {
+            const token = localStorage.getItem("token");
+            const email = localStorage.getItem("email");
+            if (token && email) {
+                setUsuario({ token, email });
+            } else {
+                Navigate("/login");
+            }
+        }
+    };
+    */
+
+    useEffect(() => {
         if (!usuario) {
             const token = localStorage.getItem("token");
             const email = localStorage.getItem("email");
@@ -21,11 +37,7 @@ export default function MenuAdmin() {
             } else {
                 navigate("/login");
             }
-        }
-    };
-
-    useEffect(() => {
-        IsAdmin();
+        }  
     }, []);
 
 

@@ -1,0 +1,68 @@
+
+.contenido-principal > h4 {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-text);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    
+}
+
+
+aside > h4 {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-text);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.selector-sucursal {
+    width: 90%;
+    background: transparent;
+    border: 1px solid var(--secondary-border);
+    color: var(--primary-text);
+    font: var(--base-typography-body);
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1.2rem;
+    appearance: none;
+    cursor: pointer;
+    transition: border 0.2s;
+}
+
+.selector-sucursal:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.selector-sucursal option {
+    background: var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.opciones-sucursal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.opciones-sucursal li {
+    padding: 0.7rem 1rem;
+    color: var(--primary-text);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.ultimo{
+    background: var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.opciones-sucursal li:hover {
+    background: var(--secondary-color);
+    color: var(--secondary-text);
+}

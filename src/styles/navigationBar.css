@@ -1,0 +1,105 @@
+.logo {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3em;
+    height:3em;
+}
+
+nav {
+    position: fixed; 
+    top: var(--tamaño-marco);
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    border: 1px solid var(--primary-border);
+    background-color: var(--primary-color);
+}
+
+.link-area {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* <- THIS is what’s missing */
+    font: var(--base-typography-body);
+    color: var(--primary-text);
+    padding-left: 4rem; /* add space to account for the absolute logo */
+}
+
+
+nav > a {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+
+
+.separator{
+    height: 3rem;
+    font-size: 40px;
+    color: var(--primary-border);
+    margin: 0 1rem;
+}
+
+.div-selector {
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    gap: 0.5rem;
+    height: 100%;
+
+    color: var(--primary-text);
+}
+
+.div-selector select {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--primary-text);
+    font: var(--base-typography-body);
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    color: var(--primary-text);
+    font: var(--base-typography-body);
+    appearance: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.div-selector select:focus {
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--secondary-text);
+    border-bottom: 2px solid var(--secondary-border);
+}
+
+.div-selector select option {
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--secondary-text);
+    border-bottom: 2px solid var(--secondary-border);
+}
+
+.user-area {
+
+}   
+
+._separator_19gij_1 {
+  padding: 0 4px;
+  color: var(--theme-text-primary);
+  font-weight: 300;
+  font-size: 33px;
+  opacity: .15;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}

@@ -1,12 +1,19 @@
 import { Outlet } from "react-router-dom";
 
-import Nav from "./Nav";
+import NavigationBar from "./NavigationBar";
+import Footer from "./Footer";
+import Embellezedores from "./Embellezedores";
 
 export default function App() {
+
+
+
   return (
     <>
-      <Nav />
+      <NavigationBar />
       <Outlet />
+      <Footer />
+      <Embellezedores />
     </>
   );
 }

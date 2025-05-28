@@ -1,0 +1,31 @@
+.direccion-publica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+.direccion-publica__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.direccion-publica__item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.direccion-publica__input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid var(--secondary-border);
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: var(--primary-text);
+    font: var(--base-typography-body);
+}

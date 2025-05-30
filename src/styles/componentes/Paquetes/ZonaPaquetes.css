@@ -23,6 +23,16 @@
     padding: 0 1rem;
 }
 
+
+.filtros-paquetes button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--secondary-text);
+    border: 1px solid var(--secondary-border);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .paquetes-lista {
     height: 90%;
     display: flex;

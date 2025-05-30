@@ -70,7 +70,6 @@ export default function ZonaPaquetes() {
                     <input type="radio" name="tipoPaquete" value="Entrega" checked={selectedTipo === "Entrega"} onChange={handleRadioChange} />
                     Entrega
                 </label>
-                <button onClick={() => console.log("Filtrando por tipo:", selectedTipo)}>Filtrar</button>
                 <button onClick={handleLimpiar}>Limpiar</button>
             </div>
             <div className="paquetes-lista">

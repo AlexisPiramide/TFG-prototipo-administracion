@@ -1,9 +1,7 @@
-
-import { useEffect } from "react";
 import "./../styles/navigationBar.css";
 export default function NavigationBar({ opcion, setOpcion }) {
 
-    const array = ["Zona Administrador","Administrador de Sucursal","Incidencias", "Configuración"];
+    const array = ["Zona Trabajador","Administrador de Sucursal","Incidencias", "Configuración"];
 
 
     return (

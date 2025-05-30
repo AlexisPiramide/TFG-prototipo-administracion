@@ -4,11 +4,11 @@
     top: 50%;
     transform: translateY(-50%);
     width: 3em;
-    height:3em;
+    height: 3em;
 }
 
 nav {
-    position: fixed; 
+    position: fixed;
     top: var(--tamaño-marco);
     left: 0;
     width: 100%;
@@ -25,21 +25,21 @@ nav {
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center; /* <- THIS is what’s missing */
+    align-items: center;
     font: var(--base-typography-body);
     color: var(--primary-text);
-    padding-left: 4rem; /* add space to account for the absolute logo */
+    padding-left: 4rem;
 }
 
 
-nav > a {
+nav>a {
     color: var(--primary-text);
     text-decoration: none;
 }
 
 
 
-.separator{
+.separator {
     height: 3rem;
     font-size: 40px;
     color: var(--primary-border);
@@ -51,7 +51,7 @@ nav > a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     gap: 0.5rem;
     height: 100%;
 
@@ -90,16 +90,22 @@ nav > a {
 }
 
 .user-area {
-
-}   
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font: var(--base-typography-body);
+    color: var(--primary-text);
+    padding-right: 4rem;
+}
 
 ._separator_19gij_1 {
-  padding: 0 4px;
-  color: var(--theme-text-primary);
-  font-weight: 300;
-  font-size: 33px;
-  opacity: .15;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+    padding: 0 4px;
+    color: var(--theme-text-primary);
+    font-weight: 300;
+    font-size: 33px;
+    opacity: .15;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }

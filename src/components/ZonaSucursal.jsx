@@ -3,6 +3,8 @@ import "./../styles/ZonaSucursal.css";
 
 import { useState } from "react";
 import InformacionPublica from "./Sucursales/Publica/InformacionPublica";
+import ZonaEmpleados from "./Sucursales/Empleados/ZonaEmpleados";
+import ZonaPaquetes from "./Paquetes/ZonaPaquetes";
 
 export default function ZonaSucursal() {
     const sucursales = [
@@ -46,8 +48,8 @@ export default function ZonaSucursal() {
                 <div className={`div-contenido-${opcion}`}>
                     {opcion === 0 && <InformacionPublica />}    
                     {opcion === 1 && <p>Contenido de Información Privada para la Sucursal {selectedSucursal}.</p>}
-                    {opcion === 2 && <p>Lista de Empleados de la Sucursal {selectedSucursal}.</p>}
-                    {opcion === 3 && <p>Detalles de Paquetes para la Sucursal {selectedSucursal}.</p>}
+                    {opcion === 2 && <ZonaEmpleados />}
+                    {opcion === 3 && <ZonaPaquetes />}
                 </div>
             </main>
         </div>

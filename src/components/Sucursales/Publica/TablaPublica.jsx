@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./../../../styles/componentesPublica/TablaPublica.css";
+import "./../../../styles/componentes/Publica/TablaPublica.css";
 
 export default function TablaPublica({ datos, setDatosCambiados }) {
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];

@@ -2,7 +2,7 @@ import DatosPublicos from "./DatosPublicos";
 import DireccionPublica from "./DireccionPublica";
 import TablaPublica from "./TablaPublica";
 
-import "./../../../styles/componentesPublica/InformacionPublica.css";
+import "./../../../styles/componentes/Publica/InformacionPublica.css";
 import { useEffect, useState } from "react";
 
 export default function InformacionPublica() {

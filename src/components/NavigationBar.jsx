@@ -1,10 +1,10 @@
 
-import { useState } from "react";
+import { useEffect } from "react";
 import "./../styles/navigationBar.css";
-export default function NavigationBar() {
-    const [opcion, setOpcion] = useState("");
+export default function NavigationBar({ opcion, setOpcion }) {
 
-    const array = ["Zona Administrador","Administrador de Sucursa","Incidencias", "Configuración"];
+    const array = ["Zona Administrador","Administrador de Sucursal","Incidencias", "Configuración"];
+
 
     return (
         <>

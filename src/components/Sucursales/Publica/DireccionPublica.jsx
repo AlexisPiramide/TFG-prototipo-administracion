@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./../../../styles/componentesPublica/DireccionPublica.css";
+import "./../../../styles/componentes/Publica/DireccionPublica.css";
 
 export default function DireccionPublica({ datos, setDatosCambiados }) {
 

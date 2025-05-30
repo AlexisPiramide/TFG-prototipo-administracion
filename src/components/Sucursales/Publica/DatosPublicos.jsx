@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./../../../styles/componentesPublica/DatosPublicos.css";
+import "./../../../styles/componentes/Publica/DatosPublicos.css";
 
 export default function DatosPublicos({ datos = {}, setDatosCambiados }) {
     const datosDB = {

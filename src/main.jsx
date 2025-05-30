@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
-import Inicio from "./components/ZonaSucursal";
+import Inicio from "./components/Inicio";
 
 import "./styles/main.css"
 import "./styles/general.css"

@@ -1,10 +1,10 @@
 
-import "./../styles/ZonaSucursal.css";
+import "./../../styles/ZonaSucursal.css";
 
 import { useState } from "react";
-import InformacionPublica from "./Sucursales/Publica/InformacionPublica";
-import ZonaEmpleados from "./Sucursales/Empleados/ZonaEmpleados";
-import ZonaPaquetes from "./Paquetes/ZonaPaquetes";
+import InformacionPublica from "./Publica/InformacionPublica";
+import ZonaEmpleados from "./Empleados/ZonaEmpleados";
+import ZonaPaquetes from "../Paquetes/ZonaPaquetes";
 
 export default function ZonaSucursal() {
     const sucursales = [

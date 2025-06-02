@@ -8,13 +8,33 @@
     
 }
 
-
-aside > h4 {
+aside{
     width: 100%;
-    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+aside > button{
+    width: 90%;
+    height: 45%;
+    background: transparent;
+    border: 1px solid var(--secondary-border);
     color: var(--primary-text);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font: var(--base-typography-body);
+
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    transition: border 0.2s;
+}
+
+aside > button:hover, .seleccionado {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: var(--secondary-text);
 }
 
 .selector-sucursal {

@@ -1,5 +1,5 @@
 import ZonaTrabajador from "./Trabajador/ZonaTrabajador";
-import ZonaSucursal from "./ZonaSucursal";
+import ZonaSucursal from "./Sucursales/ZonaSucursal";
 import { useOutletContext } from "react-router-dom";
 
 export default function Inicio() {

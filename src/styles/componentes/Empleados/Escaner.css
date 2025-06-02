@@ -1,0 +1,32 @@
+.div-contenido-0 {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    border: 1px solid var(--primary-border);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.div-escaner {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.div-ultimo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
